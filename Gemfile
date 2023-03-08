@@ -60,6 +60,8 @@ group :development do
   gem 'annotate'
   gem 'faker'
   gem 'devise'
+  gem 'rack-cors'
+  gem 'simple_token_authentication', '~> 1.0'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'

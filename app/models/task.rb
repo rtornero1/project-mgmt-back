@@ -30,5 +30,9 @@ class Task < ApplicationRecord
 
   validates :owner_id, presence: true
 
-  enum status: {backlog: "backlog", in_progress: "in_progress", completed: "completed"}
+  enum status: {
+    backlog: "backlog", 
+    in_progress: "in_progress", 
+    completed: "completed"
+  }
 end
