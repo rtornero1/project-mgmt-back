@@ -20,6 +20,9 @@
 #  fk_rails_...  (task_id => tasks.id)
 #
 class Comment < ApplicationRecord
-  belongs_to :author
-  belongs_to :task
+  belongs_to :author, class_name: "User", counter_cache: true
+
+  belongs_to :task, counter_cache: true
+
+  validates :body, presence: true
 end

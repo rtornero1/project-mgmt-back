@@ -19,5 +19,16 @@
 #  fk_rails_...  (owner_id => users.id)
 #
 class Task < ApplicationRecord
-  belongs_to :owner
+
+  belongs_to :owner, class_name: "User", counter_cache: true
+
+  has_many :comments
+
+  has_many :authors, through: :comments
+
+  validates :caption, presence: true
+
+  validates :owner_id, presence: true
+
+  enum status: {backlog: "backlog", in_progress: "in_progress", completed: "completed"}
 end
