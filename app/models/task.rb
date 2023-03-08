@@ -35,4 +35,5 @@ class Task < ApplicationRecord
     in_progress: "in_progress", 
     completed: "completed"
   }
+
 end
