@@ -22,7 +22,7 @@ class Task < ApplicationRecord
 
   belongs_to :owner, class_name: "User", counter_cache: true
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :authors, through: :comments
 
@@ -30,5 +30,10 @@ class Task < ApplicationRecord
 
   validates :owner_id, presence: true
 
-  enum status: {backlog: "backlog", in_progress: "in_progress", completed: "completed"}
+  enum status: {
+    backlog: "backlog", 
+    in_progress: "in_progress", 
+    completed: "completed"
+  }
+
 end
