@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   #   if: ->(controller) { controller.user_token_authenticable? }
   
   respond_to :html, :json
-  protect_from_forgery with: :null_session, if: :json_request?
+  protect_from_forgery with: :null_session
   before_action :authenticate_user_from_token!, if: :json_request?
   before_action :authenticate_user!, unless: :json_request?
 
